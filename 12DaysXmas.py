@@ -1,15 +1,15 @@
-GIFTS = ["Twelve drummers drumming",
-         "Eleven pipers piping",
-         "Ten lords a-leaping",
-         "Nine ladies dancing",
-         "Eight maids a-milking",
-         "Seven swans a-swimming",
-         "Six geese a-laying",
-         "Five golden rings",
-         "Four calling birds",
-         "Three french hens",
-         "Two turtle doves",
-         "A partridge in a pear tree. "]
+GIFTS = {1: "and a partridge in a pear tree. \n",
+         2: "Two turtle doves",
+         3: "Three french hens",
+         4: "Four calling birds",
+         5: "Five golden rings",
+         6: "Six geese a-laying",
+         7: "Seven swans a-swimming",
+         8: "Eight maids a-milking",
+         9: "Nine ladies dancing",
+         10: "Ten lords a-leaping",
+         11: "Eleven pipers piping",
+         12: "Twelve drummers drumming"}
 
 DAYS = {1: "first",
         2: "second",
@@ -25,29 +25,32 @@ DAYS = {1: "first",
         12: "twelfth"}
 
 
-def song(day, chorus, gifts):
-    print(chorus)
-    for i in range(day):
-        print(chorus)
-
-
-def chorus(day):
-    print(f"On the {DAYS[day]} of Christmas, my true love gave to me...\n")
+def song(day):
+    print(f"On the {DAYS[day]} day of Christmas, my true love gave to me...")
+    for i in range(day+1, 0, -1):
+        print(GIFTS[i])
 
 
 def main():
-    day = input("Enter day of Christmas (1-12): ")
-
-    if day.isdigit():
-        day = int(day)
-    else:
-        print("Please enter an integer. ")
-    if day > 12:
-        print("There are only 12 days of Christmas. ")
-    if day < 1:
-        print("You'll have to wait until the first day of Christmas for your gift. ")
-    else:
-        chorus(day)
+    while True:
+        day = input("Enter day of Christmas (1-12): ")
+        print()
+        if day.isdigit():
+            day = int(day)
+        else:
+            print("Please enter an integer. ")
+            return
+        if day > 12:
+            print("There are only 12 days of Christmas. ")
+            return
+        if day < 1:
+            print("You'll have to wait until the first day of Christmas for your gift. ")
+            return
+        else:
+            song(day)
+        print(
+            f"By the {DAYS[day]} day of Christmas you've received {int((day-1)*(day/2))} gifts")
+        break
 
 
 main()
