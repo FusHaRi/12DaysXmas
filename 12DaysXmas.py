@@ -49,7 +49,7 @@ def main():
         else:
             song(day)
         print(
-            f"By the {DAYS[day]} day of Christmas you've received {sum(int(i) for i in range(1, day+1))} gifts")
+            f"By the {DAYS[day]} day of Christmas you've received {sum(int(i) for i in range(1, day+1))} gifts. Wow!")
         break
 
 
