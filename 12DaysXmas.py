@@ -27,7 +27,7 @@ DAYS = {1: "first",
 
 def song(day):
     print(f"On the {DAYS[day]} day of Christmas, my true love gave to me...")
-    for i in range(day+1, 0, -1):
+    for i in range(day, 0, -1):
         print(GIFTS[i])
 
 
