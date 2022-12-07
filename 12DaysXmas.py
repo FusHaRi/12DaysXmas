@@ -28,9 +28,7 @@ DAYS = {1: "first",
 def verses(day):
     print(f"On the {DAYS[day]} day of Christmas, my true love gave to me...")
     for i in range(day, 0, -1):
-        if day == 1:
-            print(GIFTS[i])
-        elif i == 1:
+        if i == 1 and day != 1:
             print(f"And {GIFTS[1].lower()}")
         else:
             print(GIFTS[i])
