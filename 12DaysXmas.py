@@ -1,4 +1,5 @@
-GIFTS = {1: "and a partridge in a pear tree. \n",
+# Dictionary of Christmas gifts. Key represents day of Christmas
+GIFTS = {1: "A partridge in a pear tree. \n",
          2: "Two turtle doves",
          3: "Three french hens",
          4: "Four calling birds",
@@ -11,6 +12,7 @@ GIFTS = {1: "and a partridge in a pear tree. \n",
          11: "Eleven pipers piping",
          12: "Twelve drummers drumming"}
 
+# Dictionary of appropriate word forms for each day
 DAYS = {1: "first",
         2: "second",
         3: "third",
@@ -25,13 +27,31 @@ DAYS = {1: "first",
         12: "twelfth"}
 
 
-def song(day):
+def verses(day):
     print(f"On the {DAYS[day]} day of Christmas, my true love gave to me...")
     for i in range(day, 0, -1):
-        print(GIFTS[i])
+        if day == 1:
+            print(GIFTS[i])
+        elif i == 1:
+            print(f"And {GIFTS[1].lower()}")
+        else:
+            print(GIFTS[i])
+# Prints the chorus filled with the appropriate word form for the chosen day followed by the gifts received up until that day
+# Changes the first day gift verse to be grammatically appropriate for multiple days versus just one day
 
 
-def main():
+def total_gifts(day):
+    if day == 1:
+        print(
+            f"By the {DAYS[day]} day of Christmas you've received {sum(int(i) for i in range(1, day+1))} gift. Wow!")
+    else:
+        print(
+            f"By the {DAYS[day]} day of Christmas you've received {sum(int(i) for i in range(1, day+1))} gifts. Wow!")
+# Prints the total gifts received by the chosen day including those received on that day.
+# 'if' statement is literally just to change the word "gifts" to "gift" if first day is selected
+
+
+def song():
     while True:
         day = input("Enter day of Christmas (1-12): ")
         print()
@@ -47,10 +67,9 @@ def main():
             print("You'll have to wait until the first day of Christmas for your gift. ")
             return
         else:
-            song(day)
-        print(
-            f"By the {DAYS[day]} day of Christmas you've received {sum(int(i) for i in range(1, day+1))} gifts. Wow!")
+            verses(day)
+        total_gifts(day)
         break
 
 
-main()
+song()
