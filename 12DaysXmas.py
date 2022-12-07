@@ -70,6 +70,8 @@ def song():
             verses(day)
         total_gifts(day)
         break
+# Asks the user to input the day of Christmas and returns error messages if the user input <1 or >12
+# then prints total gifts calculation
 
 
 song()
