@@ -48,24 +48,21 @@ def total_gifts(day):
 
 
 def song():
-    while True:
-        day = input("Enter day of Christmas (1-12): ")
-        print()
-        if day.isdigit():
-            day = int(day)
-        else:
-            print("Please enter an integer. ")
-            return
-        if day > 12:
-            print("There are only 12 days of Christmas. ")
-            return
-        if day < 1:
-            print("You'll have to wait until the first day of Christmas for your gift. ")
-            return
-        else:
-            verses(day)
-        total_gifts(day)
-        break
+    day = input("Enter day of Christmas (1-12): ")
+    print()
+    if day.isdigit():
+        day = int(day)
+    else:
+        print("Please enter an integer. ")
+        return
+    if day > 12:
+        print("There are only 12 days of Christmas. ")
+        return
+    if day < 1:
+        print("You'll have to wait until the first day of Christmas for your gift. ")
+        return
+    verses(day)
+    total_gifts(day)
 
 
 song()
