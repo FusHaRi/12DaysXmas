@@ -1,4 +1,3 @@
-# Dictionary of Christmas gifts. Key represents day of Christmas
 GIFTS = {1: "A partridge in a pear tree. \n",
          2: "Two turtle doves",
          3: "Three french hens",
@@ -12,7 +11,6 @@ GIFTS = {1: "A partridge in a pear tree. \n",
          11: "Eleven pipers piping",
          12: "Twelve drummers drumming"}
 
-# Dictionary of appropriate word forms for each day
 DAYS = {1: "first",
         2: "second",
         3: "third",
@@ -36,8 +34,7 @@ def verses(day):
             print(f"And {GIFTS[1].lower()}")
         else:
             print(GIFTS[i])
-# Prints the chorus filled with the appropriate word form for the chosen day followed by the gifts received up until that day
-# Changes the first day gift verse to be grammatically appropriate for multiple days versus just one day
+# Changes the first day gift verse to be grammatically correct for multiple days versus just one day
 
 
 def total_gifts(day):
@@ -47,8 +44,7 @@ def total_gifts(day):
     else:
         print(
             f"By the {DAYS[day]} day of Christmas you've received {sum(int(i) for i in range(1, day+1))} gifts. Wow!")
-# Prints the total gifts received by the chosen day including those received on that day.
-# 'if' statement is literally just to change the word "gifts" to "gift" if first day is selected
+# 'if' statement is literally just to change the word "gifts" to "gift" if first day is selected by user
 
 
 def song():
@@ -70,8 +66,6 @@ def song():
             verses(day)
         total_gifts(day)
         break
-# Asks the user to input the day of Christmas and returns error messages if the user input <1 or >12
-# then prints total gifts calculation
 
 
 song()
