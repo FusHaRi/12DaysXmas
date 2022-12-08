@@ -46,8 +46,11 @@ def total_gifts(day):
 
 
 def song():
+    print("Ho ho ho! Enter [q] to quit. ")
     while True:
         day = input("Enter day of Christmas (1-12): ")
+        if day.lower() == "q":
+            break
         print()
         if day.isdigit():
             day = int(day)
